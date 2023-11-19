@@ -28,3 +28,4 @@ app.use("/add",require("./routes/addRoutes"))
 app.listen(8080,()=>{
     console.log("Server is running")
 })
+module.exports = app
