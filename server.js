@@ -16,7 +16,7 @@ app.get("/test",(req,res)=>{
 
 app.engine('.hbs',exphbs.engine({extname: '.hbs'}))
 app.set('view engine','.hbs')
-app.set('views', './views');
+app.set('views',path.join(__dirname,'/views'))
 app.get("/",(req,res)=>{
     res.render("home",{
         title: "Perfect University science journal",
