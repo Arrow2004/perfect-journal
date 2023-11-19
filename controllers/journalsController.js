@@ -1,10 +1,17 @@
 const { Journal } = require("../models/journalModel")
 
 module.exports.GetJournalsPage = async (req,res)=>{
-    res.render("journals/journal",{
-        title: "Jurnallar ro'yxati",
-        url: process.env.URL
-    })
+    try {
+        let journals = await Journal.find({}).lean();
+        console.log(journals)
+        res.render("journals/journal",{
+            title: "Jurnallar ro'yxati",
+            url: process.env.URL,
+            journals
+        })
+    } catch (error) {
+        console.log(error)
+    }
 }
 module.exports.GetJournalPage = async (req,res)=>{
     try {

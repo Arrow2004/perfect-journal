@@ -1,7 +1,9 @@
 const express = require("express")
 const app = express();
 const exphbs  = require('express-handlebars')
-const path = require("path")
+const Handlebars = require('handlebars')
+const path = require("path");
+const hbsHelpers = require("./utils/helpers");
 const dotenv = require("dotenv").config()
 const connectDB = require("./config/db")();
 
@@ -17,6 +19,9 @@ app.get("/test",(req,res)=>{
 app.engine('.hbs',exphbs.engine({extname: '.hbs'}))
 app.set('view engine','.hbs')
 app.set('views',path.join(__dirname,'/views'))
+
+hbsHelpers(Handlebars)
+
 app.get("/",(req,res)=>{
     res.render("home",{
         title: "Perfect University science journal",

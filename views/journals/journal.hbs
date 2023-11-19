@@ -6,41 +6,16 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td><img src="https://d1gpiqcy35u76w.cloudfront.net/catalog/product/cache/0a763d137abbc36e816b6dd865672097/s/j/sj_cover.jpg" alt=""></td>
-            <td>Perfect ilm fan jurnali. 1-son. 19.11.2023</td>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, recusandae iure. Officiis, nemo iusto quasi consequatur error veritatis molestias delectus!</td>
+        {{#each journals}}
+             <tr>
+            <td>{{incremented @index}}</td>
+            <td><img src="{{previewPicture}}" alt=""></td>
+            <td>{{name}} {{formatDate createdAt}}</td>
+            <td>{{description}}</td>
             <td><div class="btn-group">
-                <a class="btn button-link" href="">Download</a><a class="btn button-link" href="">View</a>
+                <a class="btn button-link" href="{{journal_source}}" download="">Download</a><a class="btn button-link" href="view/{{query}}">View</a>
             </div></td>
         </tr>
-        <tr>
-            <td>2</td>
-            <td><img src="https://d1gpiqcy35u76w.cloudfront.net/catalog/product/cache/0a763d137abbc36e816b6dd865672097/s/j/sj_cover.jpg" alt=""></td>
-            <td>Perfect ilm fan jurnali. 1-son. 19.11.2023</td>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, recusandae iure. Officiis, nemo iusto quasi consequatur error veritatis molestias delectus!</td>
-            <td><div class="btn-group">
-                <a class="btn button-link" href="">Download</a><a class="btn button-link" href="">View</a>
-            </div></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td><img src="https://d1gpiqcy35u76w.cloudfront.net/catalog/product/cache/0a763d137abbc36e816b6dd865672097/s/j/sj_cover.jpg" alt=""></td>
-            <td>Perfect ilm fan jurnali. 1-son. 19.11.2023</td>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, recusandae iure. Officiis, nemo iusto quasi consequatur error veritatis molestias delectus!</td>
-            <td><div class="btn-group">
-                <a class="btn button-link" href="">Download</a><a class="btn button-link" href="">View</a>
-            </div></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td><img src="https://d1gpiqcy35u76w.cloudfront.net/catalog/product/cache/0a763d137abbc36e816b6dd865672097/s/j/sj_cover.jpg" alt=""></td>
-            <td>Perfect ilm fan jurnali. 1-son. 19.11.2023</td>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, recusandae iure. Officiis, nemo iusto quasi consequatur error veritatis molestias delectus!</td>
-            <td><div class="btn-group">
-                <a class="btn button-link" href="">Download</a><a class="btn button-link" href="">View</a>
-            </div></td>
-        </tr>
+        {{/each}}
     </tbody>
 </table>
