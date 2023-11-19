@@ -1,0 +1,38 @@
+td{
+    width: 25%;
+    text-align: center;
+    padding: 5px;
+    font-size: 1.5em;
+}
+tr td:nth-child(1){
+    width: 10%;
+}
+tr td:nth-child(4){
+    width: 35%;
+    text-align: start;
+}
+td > img{
+    margin: 0 auto;
+    width: 50%;
+}
+tr:nth-child(even){
+    background: #f2f2f2;
+}
+tr:hover{
+    background: #ddd;
+}
+
+.card div img{
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.button-link{
+    border: #00B392 3px solid;
+    color: #000
+}
+.button-link:hover{
+    background-color: #00B392;
+    color: #fff
+}

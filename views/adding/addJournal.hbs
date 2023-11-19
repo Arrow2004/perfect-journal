@@ -1,0 +1,31 @@
+<style>
+    button#submit{
+        display: block;
+        background-color: #00B392;
+        color: #fff;
+        width: 50%;
+        margin: 0 auto;
+    }
+</style>
+<form action="" method="post" enctype="multipart/form-data">
+    <h2>Yangi jurnal qo'shish</h2>
+    <div class="mb-3">
+        <label for="journalname" class="form-label">Jurnal nomini kiriting: </label>
+        <input type="text" class="form-control" id="journalname" name="journalname">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Jurnal ma'lumotini kiriting</label>
+        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="previewPciture" class="form-label">Jurnal preview rasmini kiriting</label>
+        <input class="form-control" type="file" id="previewPciture" name="previewPicture">
+    </div>
+    <div class="mb-3">
+        <label for="file-input" class="form-label">Jurnal pdf faylini kiriting</label>
+        <input class="form-control" type="file" id="file-input" name="journal_source">
+    </div>
+    <div class="mb-3" style="width: 100%">
+        <button id="submit" class="btn" type="submit">Yuborish</button>
+    </div>
+</form>
