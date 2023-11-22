@@ -36,3 +36,9 @@ tr:hover{
     background-color: #00B392;
     color: #fff
 }
+.delete{
+    color: red;
+}
+.delete:hover{
+    background: red;
+}

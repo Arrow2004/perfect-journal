@@ -15,7 +15,6 @@ module.exports.GetAddJournalPage =  async (req,res)=>{
 module.exports.AddJournal = async(req,res)=>{
     try {
         let {journalname,description} = req.body;
-        console.log(req.body)
         journal_source = await uploadPDF(req.files["journal_source"][0]);
         previewPicture = await uploadImage(req.files["previewPicture"][0])
         let newJournal = await Journal.create({
@@ -26,6 +25,22 @@ module.exports.AddJournal = async(req,res)=>{
             query: slug(journalname)
         })
         res.redirect(process.env.URL+"journals/view/"+newJournal.query)
+    } catch (error) {
+        console.log("xatolik"+error);
+        res.render("error/error",{
+            title: "Xatolik yuz berdi",
+            data: error
+        })
+    }
+}
+module.exports.DeleteJournal = async(req,res)=>{
+    try {
+        let journal = await Journal.findOneAndDelete({query: req.params["query"]}).lean();
+        res.render("adding/deleted",{
+            title: "Jurnal o'chirildi",
+            url: process.env.URL,
+            isLogged: req.session.isLogged
+        })
     } catch (error) {
         console.log("xatolik"+error);
         res.render("error/error",{

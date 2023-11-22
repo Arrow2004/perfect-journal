@@ -6,14 +6,19 @@
         </tr>
     </thead>
     <tbody>
+
         {{#each journals}}
              <tr>
             <td>{{incremented @index}}</td>
             <td><img src="{{previewPicture}}" alt=""></td>
-            <td>{{name}} {{formatDate createdAt}}</td>
+            <td><b>{{name}} </b><br><i>{{formatDate createdAt}}</i></td>
             <td>{{description}}</td>
             <td><div class="btn-group">
-                <a class="btn button-link" href="{{journal_source}}" download="">Download</a><a class="btn button-link" href="view/{{query}}">View</a>
+                <a class="btn button-link" href="{{journal_source}}" download="">Download</a>
+                <a class="btn button-link" href="view/{{query}}">View</a>
+                {{#if ../isLogged}}
+                <a class="btn button-link delete" href="{{../url}}add/deleteJournal/{{query}}">delete</a>
+                {{/if}}
             </div></td>
         </tr>
         {{/each}}
