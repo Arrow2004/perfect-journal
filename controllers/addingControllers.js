@@ -5,7 +5,8 @@ module.exports.GetAddJournalPage =  async (req,res)=>{
     try {
         res.render("adding/addJournal",{
             title: "Jurnal qo'shish",
-            url: process.env.URL
+            url: process.env.URL,
+            isLogged: req.session.isLogged
         })
     } catch (error) {
         console.log(error);

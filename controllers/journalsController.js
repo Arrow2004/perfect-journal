@@ -7,7 +7,8 @@ module.exports.GetJournalsPage = async (req,res)=>{
         res.render("journals/journal",{
             title: "Jurnallar ro'yxati",
             url: process.env.URL,
-            journals
+            journals,
+            isLogged: req.session.isLogged
         })
     } catch (error) {
         console.log(error)
@@ -20,7 +21,8 @@ module.exports.GetJournalPage = async (req,res)=>{
             res.render("journals/one",{
                 title: journal.name,
                 url: process.env.URL,
-                journal
+                journal,
+                isLogged: req.session.isLogged
             })
         }
     } catch (error) {
