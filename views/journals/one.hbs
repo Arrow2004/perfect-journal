@@ -9,7 +9,9 @@
             Yaratilgan sana: 
         </p>
         <a class="btn" style="background: #00B392; color: #fff" href="{{journal.journal_source}}" download="article" target="_blank">Download</a>
+        {{#if isLogged}}
         <a class="btn" style="background: red; color: #fff" href="{{url}}add/deleteJournal/{{journal.query}}">Delete</a>
+        {{/if}}
     </div>
     <div>
         <img src="{{journal.previewPicture}}" alt="">
