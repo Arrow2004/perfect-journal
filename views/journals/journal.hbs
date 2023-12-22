@@ -1,26 +1,21 @@
 <link rel="stylesheet" href="{{url}}/journal.css">
-<table>
-    <thead>
-        <tr>
-
-        </tr>
-    </thead>
-    <tbody>
-
-        {{#each journals}}
-             <tr>
-            <td>{{incremented @index}}</td>
-            <td><img src="{{previewPicture}}" alt=""></td>
-            <td><b>{{name}} </b><br><i>{{formatDate createdAt}}</i></td>
-            <td>{{description}}</td>
-            <td><div class="btn-group">
-                <a class="btn button-link" href="{{journal_source}}" download="">Download</a>
-                <a class="btn button-link" href="journal/{{query}}">View</a>
+<div class="container-codepen">
+  <h2>Jurnalda shu vaqtga qadar chiqgan maqolalar ro'yxati</small></h2>
+  <ul class="responsive-table">
+    {{#each journals}}
+    <li class="table-row">
+      <div class="col-codepen col-1">{{incremented @index}}</div>
+      <div class="col-codepen col-2"><img src="{{previewPicture}}" alt=""></div>
+      <div class="col-codepen col-3"><b>{{name}} </b><br><i>{{formatDate createdAt}}</i></div>
+      <div class="col-codepen col-4">{{limitText description}}</div>
+      <div class="col-codepen col-5">
+            <div class="btn-group"><a class="btn button-link" href="{{journal_source}}" download=""><i class="fa-solid fa-download"></i> Yuklab olish</a><a class="btn button-link" href="journal/{{query}}"><i class="fa-solid fa-eye"></i> Ko'rish</a>
                 {{#if ../isLogged}}
-                <a class="btn button-link delete" href="{{../url}}add/deleteJournal/{{query}}">delete</a>
+                <a class="btn button-link delete" href="{{../url}}add/deleteJournal/{{query}}"><i class="fa-solid fa-trash"></i> O'chirish</a>
                 {{/if}}
-            </div></td>
-        </tr>
-        {{/each}}
-    </tbody>
-</table>
+            </div>
+       </div>
+    </li>
+    {{/each}}
+  </ul>
+</div>

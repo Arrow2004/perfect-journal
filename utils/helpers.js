@@ -9,5 +9,10 @@ const hbsHelpers = (handlebars)=>{
         index++;
         return index;
     });
+    handlebars.registerHelper('limitText', function (str) {
+        const first25 =  str.slice(0, 150);
+        return first25+"...";
+    });
 }
+
 module.exports = hbsHelpers;    

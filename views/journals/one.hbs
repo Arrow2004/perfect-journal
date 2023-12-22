@@ -1,18 +1,21 @@
+<link rel="stylesheet" href="{{url}}/one.css">
 <link rel="stylesheet" href="{{url}}/journal.css">
 <div class="card">
-    <div>
+    <div class="info">
         <h2>{{journal.name}}</h2>
         <p>
             {{journal.description}}
         </p>
         <p>
-            Yaratilgan sana: 
+            Yaratilgan sana:  {{formatDate createdAt}}
         </p>
-        <a class="btn" style="background: #00B392; color: #fff" href="{{journal.journal_source}}" download="article" target="_blank">Download</a>
-        <a class="btn" style="background: #00B392; color: #fff" href="{{url}}journals/view/{{journal.query}}" target="_blank">View</a>
+        <div>
+            <a class="btn" style="background: #00B392; color: #fff" href="{{journal.journal_source}}" download="article" target="_blank"> <i class="fa-solid fa-download"></i> Yuklab olish</a>
+        <a class="btn" style="background: #00B392; color: #fff" href="{{url}}journals/view/{{journal.query}}" target="_blank"> <i class="fa-solid fa-book"></i> O'qish</a>
         {{#if isLogged}}
-        <a class="btn" style="background: red; color: #fff" href="{{url}}add/deleteJournal/{{journal.query}}">Delete</a>
+        <a class="btn" style="background: red; color: #fff" href="{{url}}add/deleteJournal/{{journal.query}}"> <i class="fa-solid fa-trash"></i> O'chirish</a>
         {{/if}}
+        </div>
     </div>
     <div>
         <img src="{{journal.previewPicture}}" alt="">

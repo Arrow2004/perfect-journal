@@ -1,5 +1,5 @@
 
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 *{
     box-sizing: border-box;
@@ -57,14 +57,20 @@ main{
     background: #fff;
     padding: 30px;
     border-radius: 30px;
+    align-items: stretch;
 }
 .card img{
     max-width: 100%;
 }
-.card div{
+.card div.info{
     max-width: 50%;
     font-size: 1.5em;
     margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
 }
  h2::before{
     content: " ";
@@ -84,8 +90,7 @@ footer{
     border-radius: 30px 30px 0 0;
     background: #fff;
     color: #0000004D;
-    
 }
 footer h3{
-    font: 1.5em;
+    font-size: 1.5em;
 }

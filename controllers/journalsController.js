@@ -1,7 +1,7 @@
 const { Journal } = require("../models/journalModel")
 module.exports.GetJournalsPage = async (req,res)=>{
     try {
-        let journals = await Journal.find({}).lean();
+        let journals = (await Journal.find({}).lean()).reverse();
         res.render("journals/journal",{
             title: "Jurnallar ro'yxati",
             url: process.env.URL,

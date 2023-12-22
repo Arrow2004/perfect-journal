@@ -1,32 +1,61 @@
-td{
-    width: 25%;
-    text-align: center;
-    padding: 5px;
-    font-size: 1.5em;
+body {
+    font-family: 'lato', sans-serif;
 }
-tr td:nth-child(1){
-    width: 10%;
-}
-tr td:nth-child(4){
-    width: 35%;
-    text-align: start;
-}
-td > img{
-    margin: 0 auto;
-    width: 50%;
-}
-tr:nth-child(even){
-    background: #f2f2f2;
-}
-tr:hover{
-    background: #ddd;
-}
-
-.card div img{
-    display: block;
-    width: 80%;
+.container-codepen {
     margin-left: auto;
     margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+h2 {
+    font-size: 26pt;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.responsive-table li {
+    border-radius: 3px;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.responsive-table .table-header {
+    background-color: #95a5a6;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+.responsive-table .table-row {
+    background-color: #fff;
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+    font-size: 18pt;
+    border-radius: 20px;
+}
+.responsive-table .col-1 {
+    flex-basis: 5%;
+}
+.responsive-table .col-2 {
+    flex-basis: 20%;
+}
+.responsive-table .col-3 {
+    flex-basis: 20%;
+}
+.responsive-table .col-4 {
+    flex-basis: 28%;
+    text-align: start;
+    font-size: 14pt;
+}
+.responsive-table .col-5 {
+    flex-basis: 27%;
+    padding: 45px 0;
+}
+li img{
+    width: 50%;
+}
+.btn-group{
+    margin: 0 auto;
 }
 .button-link{
     border: #00B392 3px solid;
@@ -41,4 +70,26 @@ tr:hover{
 }
 .delete:hover{
     background: red;
+}
+@media all and (max-width: 767px) {
+    .responsive-table .table-header {
+        display: none;
+   }
+    .responsive-table li {
+        display: block;
+   }
+    .responsive-table .col-codepen {
+        flex-basis: 100%;
+   }
+    .responsive-table .col-codepen {
+        display: flex;
+        padding: 10px 0;
+   }
+    .responsive-table .col:before {
+        color: #6c7a89;
+        padding-right: 10px;
+        content: attr(data-label);
+        flex-basis: 50%;
+        text-align: right;
+   }
 }

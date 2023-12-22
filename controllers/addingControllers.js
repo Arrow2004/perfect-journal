@@ -16,7 +16,8 @@ module.exports.AddJournal = async(req,res)=>{
     try {
         let {journalname,description,journal_view} = req.body;
         journal_source = await uploadPDF(req.files["journal_source"][0]);
-        previewPicture = await uploadImage(req.files["previewPicture"][0])
+        //previewPicture = await uploadImage(req.files["previewPicture"][0])
+        previewPicture = "http://res.cloudinary.com/detwtkrcw/image/upload/v1703261339/perfect-journal-pictures/rnbxihoutqmnpf3plyr0.png"
         let newJournal = await Journal.create({
             name: journalname,
             previewPicture,
@@ -25,7 +26,7 @@ module.exports.AddJournal = async(req,res)=>{
             journal_view,
             query: slug(journalname)
         })
-        res.redirect(process.env.URL+"journals/view/"+newJournal.query)
+        res.redirect(process.env.URL+"journals/journal/"+newJournal.query)
     } catch (error) {
         console.log("xatolik"+error);
         res.render("error/error",{
