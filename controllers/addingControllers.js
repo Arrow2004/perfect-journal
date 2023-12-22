@@ -14,7 +14,7 @@ module.exports.GetAddJournalPage =  async (req,res)=>{
 }
 module.exports.AddJournal = async(req,res)=>{
     try {
-        let {journalname,description} = req.body;
+        let {journalname,description,journal_view} = req.body;
         journal_source = await uploadPDF(req.files["journal_source"][0]);
         previewPicture = await uploadImage(req.files["previewPicture"][0])
         let newJournal = await Journal.create({
@@ -22,6 +22,7 @@ module.exports.AddJournal = async(req,res)=>{
             previewPicture,
             journal_source,
             description,
+            journal_view,
             query: slug(journalname)
         })
         res.redirect(process.env.URL+"journals/view/"+newJournal.query)

@@ -18,6 +18,10 @@ const journalSchema = new Schema(
             type: String,
             required: true
         },
+        journal_view:{
+            type: String,
+            required: true
+        },
         query:{
             type: String,
             required: true,

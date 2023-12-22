@@ -27,3 +27,18 @@ module.exports.GetJournalPage = async (req,res)=>{
         console.log(error)
     }
 }
+module.exports.GetJournalViewPage = async (req,res)=>{
+    try {
+        let journal = await Journal.findOne({query: req.params["query"]}).lean();
+        if(journal){
+            res.render("journals/view",{
+                title: journal.name,
+                url: process.env.URL,
+                journal,
+                isLogged: req.session.isLogged
+            })
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}

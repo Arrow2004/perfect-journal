@@ -1,7 +1,8 @@
 const { Router } = require("express");
 const router = Router();
-const {GetJournalsPage,GetJournalPage} = require("../controllers/journalsController")
+const {GetJournalsPage,GetJournalPage,GetJournalViewPage} = require("../controllers/journalsController")
 
 router.get("/all",GetJournalsPage);
-router.get("/view/:query",GetJournalPage);
+router.get("/journal/:query",GetJournalPage);
+router.get("/view/:query",GetJournalViewPage);
 module.exports = router;
